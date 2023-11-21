@@ -1,0 +1,53 @@
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    text-align: center;
+  }
+
+  .curntly-time {
+    font-size: 96px;
+    letter-spacing: -5px;
+  }
+
+  .setting-analarm {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #aaa;
+  }
+
+  .button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #22c55e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .button:hover {
+    background-color: #16a34a;
+  }
+  .alarm-inputs {
+    margin: 20px 0;
+  }
+
+  .alarm-input {
+    padding: 10px;
+    margin: 0 5px;
+    width: 50px;
+    font-size: 16px;
+    text-align: center;
+  }
