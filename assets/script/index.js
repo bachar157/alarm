@@ -10,7 +10,7 @@ function updateCurrentTime() {
   const minutes = now.getMinutes().toString().padStart(2, '0');
  
   curntlyTIme=(`${hours}:${minutes}`)
-  if(usermin===minutes && userhour===hours){
+  if(minutes===getElement('minute').value && hours===getElement('hour').value){
     playAlarm()
   }
 }
@@ -24,19 +24,22 @@ function setAlarm() {
   const minute = getElement('minute').value;
   const button = document.getElementById('button');
   const feedbackElement = document.querySelector('.setting-analarm');
-    
+
   // Check if hour and minute are numbers and within range
   if (!isNaN(hour) && hour >= 0 && hour < 24 && !isNaN(minute) && minute >= 0 && minute < 60) {
       // Correct values - set alarm and update UI
       feedbackElement.textContent = `Alarm set for ${hour.padStart(2, '0')}:${minute.padStart(2, '0')}`;
       button.classList.remove('error');
-      if(minute===minutes && hour===hours){
-        playAlarm()
-      }
-  } else {
+      getElement('hour').value = '';
+      getElement('minute').value = '';
+      
+  } 
+   else {
       // Incorrect values - show error and update UI
       feedbackElement.textContent = 'Please add a correct value';
       button.classList.add('error');
+      getElement('hour').value = '';
+      getElement('minute').value = '';
   }
 }
 setAlarm()
