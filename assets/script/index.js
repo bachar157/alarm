@@ -27,15 +27,12 @@ function setAlarm() {
 
   // Check if hour and minute are numbers and within range
   if (!isNaN(hour) && hour >= 0 && hour < 24 && !isNaN(minute) && minute >= 0 && minute < 60) {
-      // Correct values - set alarm and update UI
       feedbackElement.textContent = `Alarm set for ${hour.padStart(2, '0')}:${minute.padStart(2, '0')}`;
       button.classList.remove('error');
-      getElement('hour').value = '';
-      getElement('minute').value = '';
+     
       
   } 
    else {
-      // Incorrect values - show error and update UI
       feedbackElement.textContent = 'Please add a correct value';
       button.classList.add('error');
       getElement('hour').value = '';
@@ -43,11 +40,10 @@ function setAlarm() {
   }
 }
 setAlarm()
-// Add click event listener to the button
 document.getElementById('button').addEventListener('click', setAlarm);
 
 setInterval(updateClock, 1000);
-updateClock(); // Initialize clock immediately
+updateClock(); 
 
 function playAlarm() {
   const sound = new Audio('./assets/sound/digital-alarm-beeping-slava-pogorelsky-1-00-06.mp3')
